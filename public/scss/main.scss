@@ -1,0 +1,282 @@
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Imports
+- HTML
+- Class Variables
+  -- Color
+  -- Typography
+- Nav
+- Body
+  -- About
+- Grid & Positioning
+- Media Queries
+*/
+
+
+/* Imports
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import 'Partials/_Variables.scss';
+@import 'Partials/_Mixins.scss';
+
+
+/* HTML
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+}
+body {
+  font-size: $body-font-size;
+  font-family: $global-font-family;
+  font-weight: $font-weight-light;
+  line-height: 1.2;
+  margin: 0;
+}
+h1 {
+  margin: 1.5rem 0;
+  font-size: 2.5rem;
+  font-weight: $font-weight-light;
+  color: $grey-50;
+}
+h2 {
+  margin: 1.25rem 0;
+  font-size: 2rem;
+  font-weight: $font-weight-light;
+  color: $grey-50;
+}
+h3 {
+  margin: 1rem 0;
+  font-size: 1.75rem;
+  font-weight: $font-weight-light;
+  color: $grey-50;
+}
+h4 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: $font-weight-light;
+  color: $grey-50;
+}
+h5 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: $font-weight-light;
+  color: $grey-50;
+}
+p {
+  font-size: 1.125rem;
+}
+
+
+/* Class Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+// Color
+.color-primary {
+  color: $color-primary;
+}
+.bg-color-primary {
+  background-color: $color-primary;
+}
+
+// Typography
+.font-light {
+  font-weight: $font-weight-light;
+}
+.font-bold {
+  font-weight: $font-weight-bold;
+}
+
+// Utility
+
+
+
+/* Nav
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.navigation-container {
+  max-height: 4rem;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $color-primary;
+  box-shadow: $box-shadow;
+  .navigation-list {
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+
+    // display: flex;
+    // margin: 0;
+    // position: absolute;
+    // top: 50%;
+    // -ms-transform: translateY(-50%);
+    // transform: translateY(-50%);
+    .navigation-link {
+      display: block;
+      align-content: center;
+      a {
+        font-size: 1.75rem;
+        color: $white;
+        text-decoration: none;
+        padding: 1rem;
+        &:hover, &:active {
+          background-color: darken($green, 3%);
+        }
+      }
+    }
+  }
+}
+.anchor-link {
+  position: relative;
+  top: -7rem;
+}
+
+
+/* Body
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.body-container {
+  min-height: 100vh;
+  margin: 2rem;
+  margin-top: 7rem;
+  padding: 0 2rem;
+  border: $border;
+// About
+  .about-container {
+    min-height: 100vh;
+    .about-intro {
+      color: $grey-80;
+      letter-spacing: 1px;
+      font-weight: $font-weight-light;
+    }
+    .card {
+      height: 100%;
+      min-height: 25rem;
+      width: 100%;
+      border: 1px solid $grey-20;
+      .image-container {
+        min-height: 75%;
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px dotted $grey-20;
+        #Vince-Image {
+          height: 100%;
+          max-height: 10rem;
+          max-width: 10rem;
+          border-radius: 50%;
+          // Use this object-fit property?
+          object-fit: cover;
+        }
+      }
+      .icon-container {
+        min-height: 25%;
+        padding-top: .5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        img {
+          width: 100%;
+          height: 100%;
+          max-height: 3rem;
+          max-width: 3rem;
+          &:hover {
+            transform: scale(1.25);
+            transition: 0.25s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  .work-container {
+    min-height: 100vh;
+
+  }
+
+  .hobby-container {
+    min-height: 100vh;
+
+  }
+
+  .contact-container {
+    min-height: 100vh;
+
+  }
+}
+
+
+/* Grid & Positioning
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media only screen and (min-width: 900px) {
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+
+/* Media Queries (redo non-importants / as mixins)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+// Mobile
+@media only screen and (max-width: 600px) {
+  .navigation-container {
+    .navigation-list {
+      padding: 0;
+      .navigation-link {
+        &:first-child > a {
+          padding: 0 0 0 0.5rem;
+        }
+        a {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+
+  .body-container {
+    .about-container {
+      .card {
+        .image-container {
+          #Vince-Image {
+            height: 5rem;
+            width: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media only screen and (max-width: 900px) {
+
+}
+
+// Desktop
+@media only screen and (max-width: 1200px) {
+
+}

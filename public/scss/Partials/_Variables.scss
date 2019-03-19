@@ -1,0 +1,41 @@
+/*Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Font
+- Color
+  -- Greyscales
+- Typography
+- Spacing
+- Helper clases
+- Dropshadow
+*/
+
+// Font
+$global-font-family: Helvetica Neue, Helvtica, Arial;
+$font-weight-light: 100;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+/*Color*/
+$green: #00C853;
+$blue: #2196F3;
+$color-primary: $green;
+// Grayscales
+$white: #FFFFFF;
+$grey-5: #FAFAFA;
+$grey-20: #E0E0E0;
+$grey-50: #9E9E9E;
+$grey-80: #424242;
+$black: #000000;
+
+// Typography
+$body-font-size: 0.875rem;
+
+// Spacing
+
+
+// Borders
+$border: 2px solid $grey-5;
+
+// Dropshadow
+$box-shadow:
+0px 4px 6px 0px rgba(0, 0, 0, 0.25);
